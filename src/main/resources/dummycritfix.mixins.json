@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "com.xm666.dummycritfix.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "CritInfoMixin$DamageSourceMixin",
+    "CritInfoMixin$PlayerMixin",
+    "CritRecordMixin$ModEventsMixin",
+    "CritRecordMixin$TargetDummyEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

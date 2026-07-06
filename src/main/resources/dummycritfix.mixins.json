@@ -3,6 +3,7 @@
   "package": "com.xm666.dummycritfix.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "CritInfoMixin$AttributeEventsMixin",
     "CritInfoMixin$DamageSourceMixin",
     "CritInfoMixin$PlayerMixin",
     "CritRecordMixin$ModEventsMixin",

@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ApothCritMixin {
     @Mixin(value = AttributeEvents.class, remap = false)
     private static class AttributeEventsMixin {
-        @Inject(method = "apothCriticalStrike", at = @At(value = "INVOKE", target = "Ldev/shadowsoffire/placebo/network/PacketDistro;sendToTracking(Lnet/minecraftforge/network/simple/SimpleChannel;Ljava/lang/Object;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)V", ordinal = 0))
+        @Inject(method = "apothCriticalStrike", at = @At(value = "INVOKE", target = "Ldev/shadowsoffire/placebo/network/PacketDistro;sendToTracking(Lnet/minecraftforge/network/simple/SimpleChannel;Ljava/lang/Object;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)V"))
         private void onApothCriticalStrike(LivingHurtEvent event, CallbackInfo ci, @Local(name = "critMult") float critMult) {
             var critInfo = (CritInfo) event.getSource();
             critInfo.dummycritfix$apply(critMult);

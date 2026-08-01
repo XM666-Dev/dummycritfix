@@ -1,9 +1,9 @@
 package com.xm666.dummycritfix;
 
+import net.mehvahdjukaar.dummmmmmy.common.CritRecord;
+
 public interface CritInfo {
-    void dummycritfix$setCrit(float dmgMultiplier, boolean isCriticalHit);
+    void dummycritfix$apply(float damageMultiplier);
 
-    float dummycritfix$getDamageMultiplier();
-
-    boolean dummycritfix$isCriticalHit();
+    CritRecord dummycritfix$toRecord(CritRecord fallback);
 }

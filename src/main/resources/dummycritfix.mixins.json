@@ -1,13 +1,14 @@
 {
   "required": true,
   "package": "com.xm666.dummycritfix.mixin",
+  "plugin": "com.xm666.dummycritfix.MixinConfigPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "CritInfoMixin$AttributeEventsMixin",
-    "CritInfoMixin$DamageSourceMixin",
-    "CritInfoMixin$PlayerMixin",
-    "CritRecordMixin$ModEventsMixin",
-    "CritRecordMixin$TargetDummyEntityMixin"
+    "apothic_attributes.ApothCritMixin$AttributeEventsMixin",
+    "dummycritfix.CritInfoMixin$DamageSourceMixin",
+    "dummycritfix.CritInfoMixin$PlayerMixin",
+    "dummycritfix.CritRecordMixin$ModEventsMixin",
+    "dummycritfix.CritRecordMixin$TargetDummyEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

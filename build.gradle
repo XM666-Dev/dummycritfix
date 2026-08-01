@@ -143,8 +143,8 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    implementation "curse.maven:mmmmmmmmmmmm-225738:7943676"
-    implementation "curse.maven:apothic-attributes-898963:7445079"
+    implementation "curse.maven:mmmmmmmmmmmm-225738:8510632"
+    implementation "curse.maven:apothic-attributes-898963:8502288"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

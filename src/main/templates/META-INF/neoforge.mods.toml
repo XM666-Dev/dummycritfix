@@ -91,7 +91,7 @@ config="${mod_id}.mixins.json"
 [[dependencies.${mod_id}]]
     modId="dummmmmmy"
     type="required"
-    versionRange="[1.21-2.0.12,)"
+    versionRange="[1.21-2.1.0,)"
     ordering="NONE"
     side="BOTH"
 

@@ -1,4 +1,4 @@
-package com.xm666.dummycritfix.mixin.apothic_attributes;
+package com.xm666.dummycritfix.mixin.attributeslib;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import com.xm666.dummycritfix.CritInfo;

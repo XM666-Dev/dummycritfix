@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public class CritInfoMixin {
     @Mixin(Player.class)
     private static class PlayerMixin {
-        @ModifyExpressionValue(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/damagesource/DamageSources;playerAttack(Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/damagesource/DamageSource;"))
+        @ModifyExpressionValue(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/damagesource/DamageSources;playerAttack(Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/damagesource/DamageSource;", ordinal = 0))
         private DamageSource modifyCriticalHit(DamageSource original, @Local(name = "hitResult") CriticalHitEvent event) {
             if (event.isVanillaCritical()) {
                 var info = (CritInfo) original;

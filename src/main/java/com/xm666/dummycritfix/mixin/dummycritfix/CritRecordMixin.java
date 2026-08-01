@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 public class CritRecordMixin {
-    @Mixin(ModEvents.class)
+    @Mixin(value = ModEvents.class, remap = false)
     private static class ModEventsMixin {
         @ModifyArgs(method = "onEntityDamage", at = @At(value = "INVOKE", target = "Lnet/mehvahdjukaar/dummmmmmy/network/ClientBoundDamageNumberMessage;<init>(Lnet/minecraft/world/entity/LivingEntity;FLnet/minecraft/world/damagesource/DamageSource;Lnet/mehvahdjukaar/dummmmmmy/common/CritRecord;)V"))
         private static void modifyCritRecord(Args args) {
@@ -17,7 +17,7 @@ public class CritRecordMixin {
         }
     }
 
-    @Mixin(TargetDummyEntity.class)
+    @Mixin(value = TargetDummyEntity.class, remap = false)
     private static class TargetDummyEntityMixin {
         @ModifyArgs(method = "showDamageAndAnimationsToClients", at = @At(value = "INVOKE", target = "Lnet/mehvahdjukaar/dummmmmmy/network/ClientBoundDamageNumberMessage;<init>(Lnet/minecraft/world/entity/LivingEntity;FLnet/minecraft/world/damagesource/DamageSource;Lnet/mehvahdjukaar/dummmmmmy/common/CritRecord;)V"))
         private static void modifyCritRecord(Args args) {

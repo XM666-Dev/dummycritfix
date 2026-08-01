@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 public class CritRecordMixin {
     @Mixin(ModEvents.class)
     private static class ModEventsMixin {
-        @ModifyArgs(method = "onEntityDamage", at = @At(value = "INVOKE", target = "Lnet/mehvahdjukaar/dummmmmmy/network/ClientBoundDamageNumberMessage;<init>(IFLnet/minecraft/world/damagesource/DamageSource;Lnet/mehvahdjukaar/dummmmmmy/common/CritRecord;Lnet/minecraft/world/level/Level;)V"))
+        @ModifyArgs(method = "onEntityDamage", at = @At(value = "INVOKE", target = "Lnet/mehvahdjukaar/dummmmmmy/network/ClientBoundDamageNumberMessage;<init>(Lnet/minecraft/world/entity/LivingEntity;FLnet/minecraft/world/damagesource/DamageSource;Lnet/mehvahdjukaar/dummmmmmy/common/CritRecord;)V"))
         private static void modifyCritRecord(Args args) {
             args.set(3, CritInfoHandler.toRecord(args.get(2), args.get(3)));
         }
@@ -19,7 +19,7 @@ public class CritRecordMixin {
 
     @Mixin(TargetDummyEntity.class)
     private static class TargetDummyEntityMixin {
-        @ModifyArgs(method = "showDamageAndAnimationsToClients", at = @At(value = "INVOKE", target = "Lnet/mehvahdjukaar/dummmmmmy/network/ClientBoundDamageNumberMessage;<init>(IFLnet/minecraft/world/damagesource/DamageSource;Lnet/mehvahdjukaar/dummmmmmy/common/CritRecord;Lnet/minecraft/world/level/Level;)V"))
+        @ModifyArgs(method = "showDamageAndAnimationsToClients", at = @At(value = "INVOKE", target = "Lnet/mehvahdjukaar/dummmmmmy/network/ClientBoundDamageNumberMessage;<init>(Lnet/minecraft/world/entity/LivingEntity;FLnet/minecraft/world/damagesource/DamageSource;Lnet/mehvahdjukaar/dummmmmmy/common/CritRecord;)V"))
         private static void modifyCritRecord(Args args) {
             args.set(3, CritInfoHandler.toRecord(args.get(2), args.get(3)));
         }
